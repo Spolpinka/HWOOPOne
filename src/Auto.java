@@ -37,4 +37,64 @@ public class Auto {
                 ", год производства " + productionYear +
                 ", страна производства " + country;
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        if (brand != null) {
+            this.brand = brand;
+        }
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        if (model != null) {
+            this.model = model;
+        }
+    }
+
+    public float getEngineVolume() {
+        return engineVolume;
+    }
+
+    public void setEngineVolume(float engineVolume) {
+        if (engineVolume != 0) {
+            this.engineVolume = engineVolume;
+        }
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        if (color != null) {
+            this.color = color;
+        }
+    }
+
+    public int getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(int productionYear) {
+        if (productionYear != 0) {
+            this.productionYear = productionYear;
+        }
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        if (country != null) {
+            this.country = country;
+        }
+    }
 }
