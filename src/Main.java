@@ -28,7 +28,7 @@ public class Main {
         Auto bmw = new Auto("BMW", "Z8", 3.0f,
                 "Черный", 2021, "Германия");
         Auto kia = new Auto("Kia", "Sportage", 2.4f,
-                "Красный", 2018, "Южная Корея");
+                null, 2018, "Южная Корея");
         Auto hyundai = new Auto("Hyundai", "Avante", 1.6f,
                 "Оранжевый", 2016, "Южная Корея");
 

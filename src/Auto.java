@@ -1,45 +1,29 @@
 public class Auto {
-    String brand;
-    String model;
-    float engineVolume;
-    String color;
-    int productionYear;
-    String country;
-    String def = "default";
-    float defVolume = 1.5f;
-    String defColor = "Белый";
-    int defProductionYear = 2000;
+    private String brand = "default";
+    private String model = "default";
+    private float engineVolume = 1.5f;
+    private String color = "Белый";
+    private int productionYear = 2000;
+    private String country = "default";
 
     public Auto(String brand, String model, float engineVolume, String color, int productionYear, String country) {
         if (brand != null) {
             this.brand = brand;
-        } else {
-            this.brand = def;
         }
         if (model != null) {
             this.model = model;
-        } else {
-            this.model = def;
         }
         if (engineVolume != 0) {
             this.engineVolume = engineVolume;
-        } else {
-            this.engineVolume = defVolume;
         }
         if (color != null) {
             this.color = color;
-        } else {
-            this.color = defColor;
         }
         if (productionYear != 0) {
             this.productionYear = productionYear;
-        } else {
-            this.productionYear = defProductionYear;
         }
         if (country != null) {
             this.country = country;
-        } else {
-            this.country = def;
         }
     }
 
