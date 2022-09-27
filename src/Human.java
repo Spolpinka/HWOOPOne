@@ -1,9 +1,9 @@
 public class Human {
-    String name = "Информация не указана";
-    String city = "Информация не указана";
-    int birthYear = 0;
-    String post = "Информация не указана";
-    ;
+    private String name = "Информация не указана";
+    private String city = "Информация не указана";
+    private int birthYear = 0;
+    private String post = "Информация не указана";
+
 
     public Human(String name, String city, int birthYear, String post) {
         if (name != null) {
@@ -36,7 +36,7 @@ public class Human {
     }
 
     public void setName(String name) {
-        if (name != null) {
+        if (name != null && !name.isEmpty() && !name.isBlank()) {
             this.name = name;
         }
     }
@@ -46,7 +46,7 @@ public class Human {
     }
 
     public void setCity(String city) {
-        if (city != null) {
+        if (city != null && !city.isEmpty() && !city.isBlank()) {
             this.city = city;
         }
     }
@@ -66,7 +66,7 @@ public class Human {
     }
 
     public void setPost(String post) {
-        if (post != null) {
+        if (post != null && !post.isBlank() && !post.isEmpty()) {
             this.post = post;
         }
     }
