@@ -1,11 +1,13 @@
+import org.w3c.dom.ls.LSOutput;
 import transport.Auto;
-import transport.Auto.Key;
+import transport.Bus;
 import transport.TRANSMISSION;
+import transport.Train;
 
 import java.time.LocalDate;
 
 public class Main {
-    public static void main(String[] args) {task1and2(); task1on2609(); task3on2609(); } {
+    public static void main(String[] args) {task1on28092022(); } {
 
     }
 
@@ -92,5 +94,28 @@ public class Main {
                 "Срок стояния - " + bouquet.getBouquetSpan() + " дней.");
 
     }
+
+    public static void task1on28092022(){
+        Train lastochka = new Train("Ласточка", "B-901", 2011, "Россия",
+                301, 3500, "Белорусский вокзал", "Минск-Пассажирский",
+                11);
+
+        Train leningrad = new Train("Ленинград", "D-125", 2019, "Россия",
+                270, 1700, "Ленинградский вокзал", "Ленинград-Пассажирский",
+                8);
+
+        System.out.println(lastochka);
+        System.out.println(leningrad);
+
+        Bus minsk = new Bus("Минск", "М-11", 1995, "Белоруссия", "Красный");
+        Bus gas = new Bus("ГАЗ", "ГБ-324", 1989, "Россия", "Синий");
+        Bus hyundai = new Bus("Hyundai", "BS3946", 2008, "Южная Корея", "Кофе с молоком");
+
+        System.out.println(minsk);
+        System.out.println(gas);
+        System.out.println(hyundai);
+    }
+
+
 
 }

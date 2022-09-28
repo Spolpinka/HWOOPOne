@@ -1,5 +1,7 @@
 package transport;
 
+import javax.swing.*;
+
 public class Transport {
     private String brand = "default";
     private String model = "default";
@@ -11,14 +13,33 @@ public class Transport {
     //constructor
 
     public Transport(String brand, String model, int productionYear, String country, String color) {
-        this.brand = brand;
-        this.model = model;
-        this.productionYear = productionYear;
-        this.country = country;
-        this.color = color;
-        //this.maxSpeed = maxSpeed;
+        new Transport(brand, model, productionYear, country);
+        if (color != null && !color.isEmpty() && !color.isBlank()) {
+            this.color = color;
+        }
     }
 
+    public Transport(String brand, String model, int productionYear, String country, int maxSpeed) {
+        new Transport(brand, model, productionYear, country);
+        if (maxSpeed > 0) {
+            this.maxSpeed = maxSpeed;
+        }
+    }
+
+    public Transport(String brand, String model, int productionYear, String country) {
+        if (brand != null && !brand.isBlank() && !brand.isEmpty()) {
+            this.brand = brand;
+        }
+        if (model != null && !model.isEmpty() && !model.isBlank()) {
+            this.model = model;
+        }
+        if (productionYear > 0) {
+            this.productionYear = productionYear;
+        }
+        if (country != null && !country.isBlank() && !country.isEmpty()) {
+            this.country = country;
+        }
+    }
 
     //getters
 
@@ -60,5 +81,15 @@ public class Transport {
         if (maxSpeed > 0) {
             this.maxSpeed = maxSpeed;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Марка - " + brand +
+                ", модель - " + model +
+                ", год производства - " + productionYear +
+                ", страна производства - " + country +
+                ", цвет - " + color +
+                ", максимальная скорость - " + maxSpeed;
     }
 }
