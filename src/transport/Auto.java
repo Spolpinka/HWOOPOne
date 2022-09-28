@@ -3,14 +3,9 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Auto {
+public class Auto extends Transport {
     //поля
-    private String brand = "default";
-    private String model = "default";
     private float engineVolume = 1.5f;
-    private String color = "Белый";
-    private int productionYear = 2000;
-    private String country = "default";
     private TRANSMISSION transmission = TRANSMISSION.MANUAL;
     private String bodyType = "classic";
     private String regNumber = "x000xx00";
@@ -158,23 +153,10 @@ public class Auto {
 
     public Auto(String brand, String model, float engineVolume, String color, int productionYear, String country,
                 TRANSMISSION transmission, String bodyType, String regNumber, int placesNumb, boolean tires) {
-        if (brand != null) {
-            this.brand = brand;
-        }
-        if (model != null) {
-            this.model = model;
-        }
+        super(brand, model, productionYear, country, color);
+
         if (engineVolume != 0) {
             this.engineVolume = engineVolume;
-        }
-        if (color != null) {
-            this.color = color;
-        }
-        if (productionYear != 0) {
-            this.productionYear = productionYear;
-        }
-        if (country != null) {
-            this.country = country;
         }
         if (transmission != null) {
             this.transmission = transmission;
@@ -189,21 +171,18 @@ public class Auto {
             this.placesNumb = placesNumb;
         }
         this.tires = tires;
-        if (key != null) {
-            this.key = key;
-        }
 
     }
 
     @Override
     public String toString() {
         return "Автомобиль: " +
-                "марка - " + brand +
-                ", модель - " + model +
+                "марка - " + getBrand() +
+                ", модель - " + getModel() +
                 ", объем двигателя - " + engineVolume +
-                ", цвет - " + color +
-                ", год производства - " + productionYear +
-                ", страна производства - " + country +
+                ", цвет - " + getColor() +
+                ", год производства - " + getProductionYear() +
+                ", страна производства - " + getCountry() +
                 ", тип трансмиссии - " + transmission +
                 ", тип кузова - " + bodyType +
                 ", государственный регистрационный номер - " + regNumber +
@@ -213,13 +192,6 @@ public class Auto {
                 getInsurance().toString();
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
 
     public float getEngineVolume() {
         return engineVolume;
@@ -229,24 +201,6 @@ public class Auto {
         if (engineVolume > 0) {
             this.engineVolume = engineVolume;
         }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color != null && !color.isBlank() && !color.isEmpty()) {
-            this.color = color;
-        }
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public boolean setSeasonTyres(int month) {
