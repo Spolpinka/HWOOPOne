@@ -2,7 +2,7 @@ package transport;
 
 import javax.swing.*;
 
-public class Transport {
+public abstract class Transport {
     private String brand = "default";
     private String model = "default";
     private int productionYear = 2000;
@@ -10,17 +10,41 @@ public class Transport {
     private String color = "Белый";
     private int maxSpeed;
 
+    protected int fuelPersent;//остаток топлива в %, заполняется методом refill()
+
     //constructor
 
     public Transport(String brand, String model, int productionYear, String country, String color) {
-        new Transport(brand, model, productionYear, country);
+        if (brand != null && !brand.isBlank() && !brand.isEmpty()) {
+            this.brand = brand;
+        }
+        if (model != null && !model.isEmpty() && !model.isBlank()) {
+            this.model = model;
+        }
+        if (productionYear > 0) {
+            this.productionYear = productionYear;
+        }
+        if (country != null && !country.isBlank() && !country.isEmpty()) {
+            this.country = country;
+        }
         if (color != null && !color.isEmpty() && !color.isBlank()) {
             this.color = color;
         }
     }
 
     public Transport(String brand, String model, int productionYear, String country, int maxSpeed) {
-        new Transport(brand, model, productionYear, country);
+        if (brand != null && !brand.isBlank() && !brand.isEmpty()) {
+            this.brand = brand;
+        }
+        if (model != null && !model.isEmpty() && !model.isBlank()) {
+            this.model = model;
+        }
+        if (productionYear > 0) {
+            this.productionYear = productionYear;
+        }
+        if (country != null && !country.isBlank() && !country.isEmpty()) {
+            this.country = country;
+        }
         if (maxSpeed > 0) {
             this.maxSpeed = maxSpeed;
         }
@@ -83,6 +107,8 @@ public class Transport {
         }
     }
 
+    public abstract void refill();
+
     @Override
     public String toString() {
         return "Марка - " + brand +
@@ -90,6 +116,7 @@ public class Transport {
                 ", год производства - " + productionYear +
                 ", страна производства - " + country +
                 ", цвет - " + color +
-                ", максимальная скорость - " + maxSpeed;
+                ", максимальная скорость - " + maxSpeed +
+                ", остаток топлива - " + fuelPersent + "%";
     }
 }

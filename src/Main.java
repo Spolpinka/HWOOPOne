@@ -105,6 +105,10 @@ public class Main {
                 8);
 
         System.out.println(lastochka);
+        //заправляем ласточку
+        lastochka.refill();
+        //и смотрим, что с остатком топлива
+        System.out.println(lastochka);
         System.out.println(leningrad);
 
         Bus minsk = new Bus("Минск", "М-11", 1995, "Белоруссия", "Красный");
@@ -112,6 +116,10 @@ public class Main {
         Bus hyundai = new Bus("Hyundai", "BS3946", 2008, "Южная Корея", "Кофе с молоком");
 
         System.out.println(minsk);
+        System.out.println(gas);
+        //заправляем ГАЗ
+        gas.refill();
+        //и смотрим что с остатком топлива
         System.out.println(gas);
         System.out.println(hyundai);
     }

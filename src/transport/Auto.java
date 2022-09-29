@@ -175,14 +175,17 @@ public class Auto extends Transport {
     }
 
     @Override
+    public void refill() {
+        fuelPersent = 100;
+        System.out.println("Машина " + getBrand() + " " + getModel() + " заряжена на специальной " +
+                "электрод-парковке");
+    }
+
+    @Override
     public String toString() {
         return "Автомобиль: " +
-                "марка - " + getBrand() +
-                ", модель - " + getModel() +
+                super.toString()+
                 ", объем двигателя - " + engineVolume +
-                ", цвет - " + getColor() +
-                ", год производства - " + getProductionYear() +
-                ", страна производства - " + getCountry() +
                 ", тип трансмиссии - " + transmission +
                 ", тип кузова - " + bodyType +
                 ", государственный регистрационный номер - " + regNumber +

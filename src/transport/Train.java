@@ -1,5 +1,7 @@
 package transport;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Train extends Transport {
     private float cost;
     private int timeOfRade; //в минутах
@@ -75,6 +77,12 @@ public class Train extends Transport {
         if (numbOfWagons > 0) {
             this.numbOfWagons = numbOfWagons;
         }
+    }
+
+    @Override
+    public void refill() {
+        fuelPersent = 100;
+        System.out.println("Поезд " + getBrand() + " " + getModel() + " заправлен дизелем");
     }
 
     @Override
