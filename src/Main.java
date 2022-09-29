@@ -112,9 +112,11 @@ public class Main {
         System.out.println(leningrad);
 
         Bus minsk = new Bus("Минск", "М-11", 1995, "Белоруссия", "Красный");
+        minsk.setMaxSpeed(150);//если с горки да ветер в спину
         Bus gas = new Bus("ГАЗ", "ГБ-324", 1989, "Россия", "Синий");
+        gas.setMaxSpeed(110);
         Bus hyundai = new Bus("Hyundai", "BS3946", 2008, "Южная Корея", "Кофе с молоком");
-
+        hyundai.setMaxSpeed(170);
         System.out.println(minsk);
         System.out.println(gas);
         //заправляем ГАЗ

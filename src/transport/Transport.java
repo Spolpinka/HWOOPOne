@@ -9,7 +9,6 @@ public abstract class Transport {
     private String country = "default";
     private String color = "Белый";
     private int maxSpeed;
-
     protected int fuelPersent;//остаток топлива в %, заполняется методом refill()
 
     //constructor
@@ -94,14 +93,13 @@ public abstract class Transport {
     //setters
 
 
-    public void setColor(String color) {
-
+    public final void setColor(String color) {
         if (color != null && !color.isEmpty() && !color.isBlank()) {
             this.color = color;
         }
     }
 
-    public void setMaxSpeed(int maxSpeed) {
+    public final void setMaxSpeed(int maxSpeed) {
         if (maxSpeed > 0) {
             this.maxSpeed = maxSpeed;
         }
